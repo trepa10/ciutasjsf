@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<openerp> 
+	<!-- Comentario en la Views --> 
+     <record id="view_ej_citasjsf_form" model="ir.ui.view"> 
+        <field name="name">ej.citasjsf.form</field> 
+        <field name="model">ej.citasjsf</field> 
+        <field name="arch" type="xml"> 
+            <form string="Listado de Citasjsf"> 
+                <group> 
+                    <field name="autor"/> 
+                    <field name="cita"/> 
+                    <field name="fechaVisualizacion"/> 
+                    <field name="ordenVisualizacion"/> 
+                </group> 
+            </form> 
+        </field> 
+    </record> 
+     <record id="view_ej_citasjsf_tree" model="ir.ui.view"> 
+        <field name="name">ej.citasjsf.tree</field> 
+        <field name="model">ej.citasjsf</field> 
+        <field name="arch" type="xml"> 
+           <tree> 
+                    <field name="autor"/> 
+                    <field name="cita"/> 
+                    <field name="fechaVisualizacion"/> 
+                    <field name="ordenVisualizacion"/> 
+           </tree> 
+        </field> 
+    </record> 
+    <record model="ir.actions.act_window" id="act_ej_citasjsf"> 
+        <field name="name">citasjsf</field> 
+        <field name="type">ir.actions.act_window</field> 
+        <field name="res_model">ej.citasjsf</field> 
+        <field name="view_type">form</field> 
+        <field name="view_mode">tree,form</field> 
+    </record> 
+<!--  Declaramos los menu --> 
+<menuitem id="ej_citasjsf_menu" name="Citasjsf" sequence="10"/> 
+<menuitem id="submenu_ej_citasjsf_menu" name="Citasjsf" sequence="10" parent="ej_citasjsf_menu"/> 
+<menuitem id="submenu_ej_citasjsf_action" name="Citasjsf" sequence="10" parent="submenu_ej_citasjsf_menu" action="act_ej_citasjsf"/> 
+</openerp> 
